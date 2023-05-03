@@ -5,6 +5,27 @@ import java.util.NoSuchElementException;
 
  public class Cola<T> implements Coleccionable<T>{
 
+   private class Nodo {
+
+       /**
+        * El elemento del nodo.
+        */
+       public T elemento;
+       /**
+        * El siguiente nodo.
+        */
+       public Nodo siguiente;
+
+       /**
+        * Construye un nodo con un elemento.
+        *
+        * @param elemento el elemento del nodo.
+        */
+       public Nodo(T elemento) {
+           this.elemento = elemento;
+       }
+   }
+
   private class IteradorCola implements Iterator<T> {
         private Nodo siguiente;
 
@@ -12,11 +33,12 @@ import java.util.NoSuchElementException;
 
         }
 
+        @Override
         public boolean hasNext() {
             return siguiente != null;
         }
 
-
+       @Override
        public T next() {
          T elemento= siguiente.elemento;
          siguiente = siguiente.siguiente;
@@ -30,26 +52,6 @@ import java.util.NoSuchElementException;
 
     }
 
-    private class Nodo {
-
-        /**
-         * El elemento del nodo.
-         */
-        public T elemento;
-        /**
-         * El siguiente nodo.
-         */
-        public Nodo siguiente;
-
-        /**
-         * Construye un nodo con un elemento.
-         *
-         * @param elemento el elemento del nodo.
-         */
-        public Nodo(T elemento) {
-            this.elemento = elemento;
-        }
-    }
 
 
     /* Nodo inicial de la cola*/
