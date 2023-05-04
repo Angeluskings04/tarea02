@@ -9,7 +9,7 @@ import java.lang.UnsupportedOperationException;
  * @author Alejandro Hernández Mora <alejandrohmora@ciencias.unam.mx>
  * @version 1.1
  */
-public class Lista<T> implements Listable<T>,  Coleccionable <T>, Iterable <T>{
+public class Lista<T>  implements Listable<T>,  Coleccionable <T>, Iterable <T>{
 
   /* Clase interna para construir la estructura */
 public class Nodo{

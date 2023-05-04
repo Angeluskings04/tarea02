@@ -9,7 +9,19 @@ import java.util.NoSuchElementException;
  * @version 1.0
  * @param <T> Tipo que tienen los objetos que guarda esta pila.
  */
-public class Pila<T> implements Coleccionable<T>  {
+public class Pila<T> extends Lista<T> implements Coleccionable<T>  {
+
+  private class Nodo {
+
+     public T elemento;
+
+     public Nodo siguiente;
+
+
+     public Nodo(T elemento) {
+         this.elemento = elemento;
+     }
+ }
 
   private class IteradorPila implements Iterator<T> {
 
@@ -37,26 +49,7 @@ public class Pila<T> implements Coleccionable<T>  {
     }
  }
 
- private class Nodo {
 
-    /**
-     * El elemento del nodo.
-     */
-    public T elemento;
-    /**
-     * El siguiente nodo.
-     */
-    public Nodo siguiente;
-
-    /**
-     * Construye un nodo con un elemento.
-     *
-     * @param elemento el elemento del nodo.
-     */
-    public Nodo(T elemento) {
-        this.elemento = elemento;
-    }
-}
     private Nodo tope;
     private int elementos;
 

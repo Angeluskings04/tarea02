@@ -3,24 +3,15 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 
- public class Cola<T> implements Coleccionable<T>{
+ public class Cola<T> extends Lista<T> implements Coleccionable<T>{
 
    private class Nodo {
 
-       /**
-        * El elemento del nodo.
-        */
+
        public T elemento;
-       /**
-        * El siguiente nodo.
-        */
+
        public Nodo siguiente;
 
-       /**
-        * Construye un nodo con un elemento.
-        *
-        * @param elemento el elemento del nodo.
-        */
        public Nodo(T elemento) {
            this.elemento = elemento;
        }

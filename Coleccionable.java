@@ -1,5 +1,6 @@
 
 import java.util.NoSuchElementException;
+import java.util.Iterator;
 
 /**
  * <p>Interface para colecciones, con operaciones para agregar y eliminar
@@ -47,7 +48,7 @@ public interface Coleccionable<T> extends Iterable<T> {
      */
     public boolean esVacia();
     /**
-     * Método para eliminar todos los elementos en la colección 
+     * Método para eliminar todos los elementos en la colección
      */
     public void vaciar();
 
