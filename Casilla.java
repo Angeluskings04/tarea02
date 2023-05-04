@@ -27,7 +27,7 @@ public class Casilla {
   }
 
   private Casilla(int x, int y, Laberinto laberinto) {
-      this.norte = this.sur = this.este = this.oeste = false;
+      this.arriba = this.abajo = this.derecha = this.izquierda = false;
       this.x = x;
       this.y = y;
       this.laberinto = laberinto;
