@@ -88,6 +88,12 @@ public  class IteradorLista implements Iterator{
 
     }
 
+    public int longitud() {
+    return longitud;
+}
+
+
+
     public void agregar(T elemento) {
     Nodo nodo = new Nodo(elemento);
     if (esVacia()) {

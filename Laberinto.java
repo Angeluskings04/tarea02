@@ -1,8 +1,8 @@
-
+import java.util.Random;
 
 public class Laberinto{
 
-  private Casilla[][] casillas;
+  public Casilla[][] casillas;
 
   private int alto;
 
@@ -13,6 +13,16 @@ public class Laberinto{
     this.ancho = ancho;
     this.casillas = generarCasillas();
     generarLaberinto();
+  }
+
+  public void impresion(){
+
+    for (int i = 0; i< alto; i++) {
+      for (int j = 0; j < ancho; j++) {
+        System.out.println(casillas[i][j]);
+        System.out.println();
+      }
+    }
   }
 
   private void marcarTodosSinVisitar(){
@@ -28,7 +38,7 @@ public class Laberinto{
       casilla.visitar();
       Pila<Casilla> pila = new Pila<Casilla>();
       pila.push(casilla);
-      while(!pila.esVacio()){
+      while(!pila.esVacia()){
           casilla = pila.peek();
           if(casilla.noHayVecinosSinVisitar()){
               pila.pop();
@@ -39,6 +49,15 @@ public class Laberinto{
               pila.push(vecino);
           }
       }
+
+    /*  for (Casilla[] c : ) {
+        for (Casilla c1 : ) {
+          System.out.println(c1);
+        }
+        System.out.println();
+      }*/
+
+
 
       // Esto se hace para poder encontrar un camino de una Casilla a otra con el mismo algoritmo
       marcarTodosSinVisitar();
@@ -63,7 +82,7 @@ public class Laberinto{
       Casilla casilla = inicio;
       casilla.visitar();
       pila.push(casilla);
-      while(!pila.esVacio()){
+      while(!pila.esVacia()){
           casilla = pila.peek();
           if(casilla.equals(fin)) break;
           if(casilla.noHayVecinosSinVisitarConPaso()){
@@ -76,7 +95,7 @@ public class Laberinto{
       }
 
       marcarTodosSinVisitar();
-      Casilla[] camino = new Casilla[pila.getTamanio()];
+      Casilla[] camino = new Casilla[pila.longitud()];
 
       // En reversa, debido al como agrega elementos la pila
       for (int i = camino.length - 1; i >= 0; i--) {

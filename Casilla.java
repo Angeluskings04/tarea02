@@ -15,18 +15,20 @@ public class Casilla {
 
   private boolean izquierda;
 
-  private int x;
+  public int x;
 
-  private Laberinto laberinto;
+  public int y;
 
-  private boolean visitada;
+  public Laberinto laberinto;
 
-  private Casilla() {
+  public boolean visitada;
+
+  public Casilla() {
       this.x = -1;
       this.y = -1;
   }
 
-  private Casilla(int x, int y, Laberinto laberinto) {
+  public Casilla(int x, int y, Laberinto laberinto) {
       this.arriba = this.abajo = this.derecha = this.izquierda = false;
       this.x = x;
       this.y = y;
@@ -227,7 +229,7 @@ public class Casilla {
 
   @Override
   public String toString() {
-      return "Casilla [este=" + este + ", norte=" + norte + ", oeste=" + oeste + ", sur=" + sur + ", visitada="
+      return "Casilla [derecha =" + derecha + ", arriba =" + arriba + ", izquierda =" + izquierda + ", abajo =" + abajo + ", visitada="
               + visitada + ", x=" + x + ", y=" + y + "]";
   }
 
@@ -238,10 +240,10 @@ public class Casilla {
       if (obj instanceof Casilla) {
           Casilla c = (Casilla) obj;
           if (c.x == x && c.y == y) {
-              if (c.norte != norte || c.sur != sur) {
+              if (c.arriba != arriba || c.abajo != abajo) {
                   return false;
               }
-              if (c.este != este || c.oeste != oeste) {
+              if (c.derecha != derecha || c.izquierda != izquierda) {
                   return false;
               }
               return true;

@@ -29,4 +29,7 @@ public interface Listable<T> {
   //Método para eliminar un elemento de la lista.
   public void eliminar(T elemento);
 
+  public int longitud();
+
+
 }
