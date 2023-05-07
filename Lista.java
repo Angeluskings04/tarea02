@@ -68,8 +68,8 @@ public  class IteradorLista implements Iterator{
     }
 }
 
-    private Nodo cabeza, cola;
-    private int longitud;
+    protected Nodo cabeza, cola;
+    protected int longitud;
 
     public boolean esVacia(){
         return longitud == 0;

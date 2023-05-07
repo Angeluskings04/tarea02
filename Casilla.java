@@ -7,6 +7,8 @@ public class Casilla {
     ARRIBA, ABAJO, DERECHA, IZQUIERDA
   }
 
+  private String imagen;
+
   private boolean arriba;
 
   private boolean abajo;
@@ -38,6 +40,14 @@ public class Casilla {
 
   public boolean Arriba() {
       return arriba;
+  }
+
+  public String getImagen(){
+    return imagen;
+  }
+
+  public void setImagen(String newImagen){
+    this.imagen=newImagen;
   }
 
   public void setArriba(boolean arriba) {
@@ -94,6 +104,27 @@ public class Casilla {
           }
       }
       return todosVisitados;
+  }
+
+  //Metodo que imprime la casilla para mejor visualizacion
+  public void representacionCasilla(){
+    String nuevaImagen="";
+    /*if(Arriba()==false){
+        nuevaImagen+="-";
+    }*/
+    if(Derecha()==false){
+        nuevaImagen+="|";
+    }else {nuevaImagen=" ";}
+    
+    if(Abajo()==false){
+        nuevaImagen+="-";
+    }else {nuevaImagen=" ";}
+    
+    if(Izquierda()==false){
+        nuevaImagen+="|";
+    }else {nuevaImagen=" ";} 
+
+    this.imagen = nuevaImagen;
   }
 
   public boolean noHayVecinosSinVisitarConPaso() {
